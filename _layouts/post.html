@@ -17,13 +17,13 @@ layout: default
 {% unless page.cover %} {% include page_divider.html %} {% endunless %}
 
 <section class="post-meta">
-  <div class="post-date">{{ page.date | date: "%Y-%m-%-d" }}</div>
+  <div class="post-date">{{ page.date | date: "%B %-d, %Y" }}</div>
   <div class="post-categories">
   {% if page.categories.size > 0 %}in {% for cat in page.categories %}
     {% if site.jekyll-archives %}
-    <a href="{{ site.baseurl }}/category/{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+    <a href="">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
     {% else %}
-    <a href="{{ site.baseurl }}/posts/#{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+    <a href="">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
     {% endif %}
   {% endfor %}{% endif %}
   </div>
@@ -35,9 +35,9 @@ layout: default
 
 {% if site.jekyll-archives %}
 {% if page.tags.size > 0 %}
-<section class="tags">
+<!-- <section class="tags">
   <strong>Tags:</strong> {% for tag in page.tags %}<a href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a>{% if forloop.last == false %},&nbsp;{% endif %}{% endfor %}
-</section>
+</section> -->
 {% endif %}
 {% endif %}
 

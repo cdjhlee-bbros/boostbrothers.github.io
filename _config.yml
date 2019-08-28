@@ -107,3 +107,8 @@ protocols:
     # os_repo: "https://github.com/bencentra/centrarium.com"
     # os_rcs_type: "git"
     # os_src: "git@github.com:bencentra/centrarium.com.git"
+
+collections:
+  authors:
+    title: Authors
+    output: true

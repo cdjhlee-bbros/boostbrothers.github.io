@@ -2,7 +2,7 @@
 layout: post
 title:  "백엔드팀을 소개합니다."
 date:   2019-08-26 08:43:59
-author: 백엔드팀 정종석
+author: 정종석
 categories: experience
 tags:	experience
 cover:  "/assets/instacode.png"
