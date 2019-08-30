@@ -51,6 +51,7 @@ a {
   color: $action-color;
   text-decoration: none;
   // transition: color 0.1s linear;
+  word-break: break-word;
 
   &:active,
   &:focus,
