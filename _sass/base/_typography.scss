@@ -40,6 +40,11 @@ h6 {
 
 p {
   margin: 0 0 $small-spacing;
+
+  & + h2,
+  & + h3 {
+    margin-top: $base-font-size * 3;
+  }
 }
 
 a {
@@ -76,4 +81,11 @@ picture {
 
 code {
 
+}
+
+blockquote {
+  // color: #666;
+  border-left: 4px solid #b3b3b3;
+  padding-left: 15px;
+  margin-left: 0px;
 }
