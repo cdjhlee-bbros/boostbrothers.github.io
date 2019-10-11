@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "레디스를 활용한 병원 찾기 서비스 API 개발"
+title:  "[AWS SAM] 1. CloudFormation"
 date:   2019-10-12 00:46:00
 author: 김광호
 categories: technology
