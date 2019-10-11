@@ -24,7 +24,7 @@ CloudFormation은 크게 다음의 요소로 구성됩니다.
 - Parameters
 - Mappings
 - Outputs
-- Conditions
+- Resources
 
 ### Parameters
 
