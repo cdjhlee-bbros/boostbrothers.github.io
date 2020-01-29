@@ -3,7 +3,7 @@ layout: post
 title:  "[AWS SAM] 1. CloudFormation"
 date:   2019-10-12 00:46:00
 author: 김광호
-categories: technology
+categories: Technology
 tags:   [technology, redis]
 cover:  "/assets/instacode.png"
 ---
