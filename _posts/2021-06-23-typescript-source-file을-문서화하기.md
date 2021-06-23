@@ -99,7 +99,11 @@ Tip! Typescript AST에 대해서 online으로 viewer를 제공하는 [홈페이�
 
 ```bash
 $npm i -D @boostbrothers/ts.md # local
+# 실패 시: package를 찾을 수 없을 경우
+$npm i -D --registry https://npm.pkg.github.com/ @boostbrothers/ts.md
 ```
+
+package를 찾을 수 없을 경우 registry에 `[https://npm.pkg.github.com](https://npm.pkg.github.com)`을 [추가](https://docs.github.com/en/packages/learn-github-packages/installing-a-package)해주세요.
 
 ## Usage
 
