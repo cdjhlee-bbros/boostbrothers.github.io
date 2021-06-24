@@ -112,9 +112,9 @@ Tip! Typescript AST에 대해서 online으로 viewer를 제공하는 [홈페이�
 
 ### 예상 질문: Handlebars를 사용한 이유?
 
-![handlebars image](/assets/2021-06-23/handlebars1.jpg)
+![handlebars image](/assets/2021-06-23/handlebars1.png)
 
-![handlebars image 2](/assets/2021-06-23/handlebars2.jpg)
+![handlebars image 2](/assets/2021-06-23/handlebars2.png)
 
 - 근소한 다운로드 수 차이
 - x3 stars, likes on slant(~~그리고 4배차이의 hate~~)
