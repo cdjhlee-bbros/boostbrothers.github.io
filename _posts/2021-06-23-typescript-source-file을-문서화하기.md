@@ -1,3 +1,35 @@
+---
+layout: post
+title:  "typescript source file을 문서화하기"
+date:   2021-06-23 15:00:00
+author: 고윤호
+categories: Technology
+tags:   typescript, documentation, package
+cover:  "/assets/2021-06-23/documentation.jpg"
+---
+
+# 목차
+
+- [개요](#개요)
+  * [Motivation](#motivation)
+- [원리](#원리)
+  * [typescript 패키지를 이용](#typescript-패키지를-이용)
+    + [Typescript AST](#typescript-ast)
+    + [AST 하위 그룹](#ast-하위-그룹)
+  * [type 파싱하기](#type-파싱하기)
+  * [Handlebars.js를 이용](#handlebarsjs를-이용)
+    + [예상 질문: Handlerbars를 사용한 이유?](#예상-질문-handlerbars를-사용한-이유)
+- [Demo](#demo)
+  * [Install](#install)
+  * [Usage](#usage)
+  * [Example Source File](#example-source-file)
+  * [Example Markdown File](#example-markdown-file)
+- [마무리](#마무리)
+  * [라이브러리를 만들면서 느낀점](#라이브러리를-만들면서-느낀점)
+  * [이후 개선하고 싶은 점](#이후-개선하고-싶은-점)
+  * [개인적인 소감](#개인적인-소감)
+- [Author](#author)
+
 # 개요
 
 ## Motivation
@@ -78,11 +110,11 @@ Tip! Typescript AST에 대해서 online으로 viewer를 제공하는 [홈페이�
 
 그러나 공통 라이브러리로 분리하여서 public 패키지로 분리하면 좋겠다는 의견을 반영하면서 다양한 케이스에 적용할 수 있는 템플릿 라이브러리를 이용하려고 Handlebars.js를 도입하였습니다.
 
-### 예상 질문: Handlerbars를 사용한 이유?
+### 예상 질문: Handlebars를 사용한 이유?
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/58fab5dd-b60c-406c-bd86-4d6d139a955a/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/58fab5dd-b60c-406c-bd86-4d6d139a955a/Untitled.png)
+![handlebars image](/assets/2021-06-23/handlebars1.jpg)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/39394676-c75c-4488-9381-986fc6396ec2/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/39394676-c75c-4488-9381-986fc6396ec2/Untitled.png)
+![handlebars image 2](/assets/2021-06-23/handlebars2.jpg)
 
 - 근소한 다운로드 수 차이
 - x3 stars, likes on slant(~~그리고 4배차이의 hate~~)
@@ -226,7 +258,27 @@ field9| [`Array`](#Array)\<[`LiteralTypes`](#LiteralTypes)\>| | |
 field10| [`Gen`](#Gen)|  ✅ | |
 ~~~
 
-이상 내용이 길어지는 것을 방지하기 위하여 사용법에 관련된 부분은 [ts.md의 README.md](https://github.com/boostbrothers/ts.md) 파일을 읽어주시기 바랍니다. 감사합니다. ☺️
+이상 내용이 길어지는 것을 방지하기 위하여 사용법에 관련된 부분은 [ts.md의 README.md](https://github.com/boostbrothers/ts.md) 파일을 읽어주시기 바랍니다.
+
+# 마무리
+
+## 라이브러리를 만들면서 느낀점
+
+첫째로, 프로젝트를 진행하면서 어려웠던 점은 typescript 모듈을 어떻게 써야 하는지 나와 있는 문서가 전혀 없었다는 점입니다. 공식 문서가 없다 보니 어떻게 찾아봐야 할지도 막막하고 `typescript`라는 키워드로 검색을 하다보니 검색 결과도 내가 필요한 키워드가 검색되지 않았습니다.
+
+국내외 블로그들을 여럿 검색해보면서 어떻게 시작해야하는지 초기 시작 부분을 제외하고는 도움을 받기 어려운 점이 있었습니다.
+
+둘째로, Handlebars.js를 쓰면서 디버깅하는데 어려움이 있었습니다. 그냥 typescript 코드를 분석하는데는 어려움이 없었지만 handlebars를 쓰면서는 템플릿에 어느 부분이 틀렸는지 어떤 내용이 잘못 됐는지 알아차리기가 쉽지 않았습니다.
+
+## 이후 개선하고 싶은 점
+
+현재는 한 파일안에 분석한 모든 파일을 다 밀어넣다보니 큰 프로젝트의 경우 한 파일이 길어지는 부분이 있습니다. 이 점을 `.tsmdrc.json` 파일을 여럿으로 쪼개 만들 수 있는 방법이 있지만 원초적으로 이런 부분을 개선하기 위해서 파일별로 출력하는 기능과 파일에서 TOC(목차)를 만들어주는 기능을 추가하면 보기 좀 더 좋을 것이라는 생각이 듭니다.
+
+반면에 저희가 사용하고 있는 시스템에 맞춰 작업을 진행하다보니 아직 지원하지 않는 기능들이 있는데 예를 들어 `class` 같은 몇가지 문법을 아직 지원하지 않습니다. 혹시 이슈로 누군가 등록해주시거나 PR을 올려주신다면 요청한 기능들에 대하여 추가할 의지는 있습니다.
+
+## 개인적인 소감
+
+이전에도 typescript의 type들에 대하여서 굉장히 하드하게 사용하기도하고 여러 오픈소스 프로젝트에 참여하기도 하면서 typescript를 잘 써오고 있었는데요. typescript의 AST를 분석 해보기도 하고 typescript 소스파일을 바탕으로 결과물을 내는 프로젝트를 진행하다보니 조금은 다른 각도에서 typescript의 매력을 느낀 시간이었습니다.
 
 ---
 
