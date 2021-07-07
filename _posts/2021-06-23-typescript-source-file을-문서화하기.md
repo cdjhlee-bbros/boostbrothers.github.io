@@ -10,8 +10,7 @@ cover:  "/assets/2021-06-23/documentation.jpg"
 
 # 목차
 
-- [개요](#개요)
-  * [Motivation](#motivation)
+- [Motivation](#motivation)
 - [원리](#원리)
   * [typescript 패키지를 이용](#typescript-패키지를-이용)
     + [Typescript AST](#typescript-ast)
@@ -30,9 +29,7 @@ cover:  "/assets/2021-06-23/documentation.jpg"
   * [개인적인 소감](#개인적인-소감)
 - [Author](#author)
 
-# 개요
-
-## Motivation
+# Motivation
 
 비브로스 백엔드 팀은 서비스 운영을 위해서 많은 mongoose 스키마와 API 인터페이스를 관리하고 있습니다. 
 
