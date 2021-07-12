@@ -1,18 +1,18 @@
 ---
 layout: post
-title:  "typescript source file을 문서화하기"
-date:   2021-06-23 15:00:00
+title:  "Typescript source file을 문서화하기"
+date:   2021-07-12 15:00:00
 author: 고윤호
 categories: Technology
 tags:   typescript, documentation, package
-cover:  "/assets/2021-06-23/documentation.jpg"
+cover:  "/assets/2021-07-12/documentation.jpg"
 ---
 
 # 목차
 
 - [Motivation](#motivation)
 - [원리](#원리)
-  * [typescript 패키지를 이용](#typescript-패키지를-이용)
+  * [Typescript 패키지를 이용](#typescript-패키지를-이용)
     + [Typescript AST](#typescript-ast)
     + [AST 하위 그룹](#ast-하위-그룹)
   * [type 파싱하기](#type-파싱하기)
@@ -39,7 +39,7 @@ cover:  "/assets/2021-06-23/documentation.jpg"
 
 # 원리
 
-## typescript 패키지를 이용
+## Typescript 패키지를 이용
 
 typescript를 이용한다는게 무슨 의미일까요? typescript는 그 자체로 TS compiler 역할을 수행하기도 하지만 휼륭한 TS Source Parser이기도 합니다. 종종 typescript 패키지를 이용하시면서 내부 패키지를 열어보시면 `const ts = require('typescript')` 이런 코드가 있는 것을 보실 수 있으실텐데요. 별도 외부 라이브러리 없이 typescript를 분석하거나 코드를 수정하실 수 있습니다.
 
@@ -109,9 +109,9 @@ Tip! Typescript AST에 대해서 online으로 viewer를 제공하는 [홈페이�
 
 ### 예상 질문: Handlebars를 사용한 이유?
 
-![handlebars image](/assets/2021-06-23/handlebars1.png)
+![handlebars image](/assets/2021-07-12/handlebars1.png)
 
-![handlebars image 2](/assets/2021-06-23/handlebars2.png)
+![handlebars image 2](/assets/2021-07-12/handlebars2.png)
 
 - 근소한 다운로드 수 차이
 - x3 stars, likes on slant(~~그리고 4배차이의 hate~~)
