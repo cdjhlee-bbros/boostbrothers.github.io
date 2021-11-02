@@ -43,7 +43,9 @@ jekyll-archives:
     tag: '/tag/:name/'
 
 # Disqus comments
+disqus:
 # disqus_shortname: bencentra
+  shortname: boostbrothers-technology-blog
 
 # Google analytics
 # ga_tracking_id: "UA-XXXX-1"
